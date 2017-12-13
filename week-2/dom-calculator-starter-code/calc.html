@@ -9,21 +9,21 @@
 			<div class="display">
 				<h2 class="screen">Sparta Calculator</h2>
 			</div>
-			<button onclick="changeDisplay(0)" class="buttonNum">7</button>
-			<button onclick="changeDisplay(1)" class="buttonNum">8</button>
-			<button onclick="changeDisplay(2)" class="buttonNum">9</button>
-			<button onclick="changeDisplay(3)" class="operator">*</button>
-			<button onclick="changeDisplay(4)" class="buttonNum">4</button>
-			<button onclick="" class="buttonNum">5</button>
-			<button onclick="" class="buttonNum">6</button>
-			<button onclick="" class="operator">/</button>
-			<button onclick="" class="buttonNum">1</button>
-			<button onclick="" class="buttonNum">2</button>
-			<button onclick="" class="buttonNum">3</button>
-			<button onclick="" class="operator">-</button>
-			<button onclick="" class="buttonClear">AC</button>
-			<button onclick="" class="equals">=</button>
-			<button onclick="" class="operator">+</button>
+			<button onclick="getNumber(0)" class="buttonNum">7</button>
+			<button onclick="getNumber(1)" class="buttonNum">8</button>
+			<button onclick="getNumber(2)" class="buttonNum">9</button>
+			<button onclick="getOperator(0)" class="operator">*</button>
+			<button onclick="getNumber(3)" class="buttonNum">4</button>
+			<button onclick="getNumber(4)" class="buttonNum">5</button>
+			<button onclick="getNumber(5)" class="buttonNum">6</button>
+			<button onclick="getOperator(1)" class="operator">/</button>
+			<button onclick="getNumber(6)" class="buttonNum">1</button>
+			<button onclick="getNumber(7)" class="buttonNum">2</button>
+			<button onclick="getNumber(8)" class="buttonNum">3</button>
+			<button onclick="getOperator(2)" class="operator">-</button>
+			<button onclick="clearDisplay()" class="buttonClear">AC</button>
+			<button onclick="getEquals('display')" class="equals">=</button>
+			<button onclick="getOperator(3)" class="operator">+</button>
 		</div>
 		<script src="js/calc.js"></script>
 	</body>

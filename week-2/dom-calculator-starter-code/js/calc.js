@@ -1,30 +1,76 @@
-numbersClickedInner = [];
+var displayClickedInner = [];
+var numbersClickedInner = [];
+var firstNumber;
+var secondNumber;
+var operatorReturn = [];
+var equals = getEquals("return");
+//console.log(equals);
 
-function numberSeven(){
-	var numberSeven = document.getElementsByClassName("buttonNum");
-	var sevenInner = numberSeven[0].innerHTML;
-	// console.log(sevenInner);
-	return sevenInner;
+function getNumber(number){ // This function gets a number from the number elements in the calculator.
+	// if(operatorReturn.length == 0){
+		var numberClicked =  document.getElementsByClassName("buttonNum");
+		displayClickedInner.push(numberClicked[number].innerHTML);
+		numbersClickedInner.push(numberClicked[number].innerHTML);
+		var displayChange = document.getElementsByClassName("screen");
+		displayChange[0].innerHTML = displayClickedInner.join("");	
+		firstNumber = numbersClickedInner.join("");
+	// } else if (equals == "="){
+	// 	numbersClickedInner =[];
+	// 	var numberClicked =  document.getElementsByClassName("buttonNum");
+	// 	displayClickedInner.push(numberClicked[number].innerHTML);
+	// 	numbersClickedInner.push(numberClicked[number].innerHTML);
+	// 	var displayChange = document.getElementsByClassName("screen");
+	// 	displayChange[0].innerHTML = displayClickedInner.join("");
+	// 	// console.log(parseInt(displayClickedInner.join("")));
+	// }
+}
+
+
+function getOperator(operatorNumber){
+	
+	if(operatorNumber == 0 || operatorNumber == 1 || operatorNumber == 2 || operatorNumber == 3 ){
+		var operatorClicked =  document.getElementsByClassName("operator");
+		var operatorClickedInner = operatorClicked[operatorNumber].innerHTML;
+		operatorReturn.push(operatorClickedInner);
+		displayClickedInner.push(operatorClickedInner);
+		var displayChange = document.getElementsByClassName("screen");
+		displayChange[0].innerHTML = displayClickedInner.join("");
+		
+	}
+	//console.log(parseInt(displayClickedInner.join("")));
+	numbersClickedInner = [];
+	console.log(numbersClickedInner.length);
+	console.log(firstNumber);
 	
 }
 
-function numberEight(){
-	var numberEight = document.getElementsByClassName("buttonNum");
-	var eightInner = numberEight[1].innerHTML;
-	// console.log(sevenInner);
-	return eightInner;
-	
+
+
+function getEquals(string){
+		var equalsClicked = document.getElementsByClassName("equals");
+		var equalsClickedInner = equalsClicked[0].innerHTML;
+		if(string == "display"){
+			displayClickedInner.push(equalsClickedInner);
+			var displayChange = document.getElementsByClassName("screen");
+			displayChange[0].innerHTML = displayClickedInner.join("");
+		}else if(string == "return") {
+			return equalsClickedInner;
+		}
+		console.log(numbersClickedInner.length);
+		secondNumber = numbersClickedInner.join("");
+		console.log(secondNumber);
+		var displayChange = document.getElementsByClassName("screen");
+		displayChange[0].innerHTML = firstNumber + ""  +secondNumber;
+
 }
 
 
-
-function changeDisplay(number){
-	var numberClicked =  document.getElementsByClassName("buttonNum");
-	// var numberClickedInner = []; 
-	numbersClickedInner.push(numberClicked[number].innerHTML);
+function clearDisplay(){
+	var clearClicked = document.getElementsByClassName("buttonClear");
+	var clearClickedInner = clearClicked[0].innerHTML;
 	var displayChange = document.getElementsByClassName("screen");
-	displayChange[0].innerHTML = numbersClickedInner.join();
-	
+	displayChange[0].innerHTML = "Sparta Calculator";
+	displayClickedInner = [];
 }
 
-console.log(numbersClickedInner);
+
